@@ -140,19 +140,53 @@ realizado.
 24. No repositório **jqueryrepo**, criado no passo anterior, qual o efeito do comando
 **git shortlog -sne**?
 
-
+Retorna as mensagens de log da saída padrão. Exemplo:
+1714  John Resig <jeresig@gmail.com>
+  700  Timmy Willison <4timmywil@gmail.com>
+  587  Dave Methvin <dave.methvin@gmail.com>
+  413  Michał Gołębiowski-Owczarek <m.goleb@gmail.com>
 
 25. No repositório **jqueryrepo**, qual o efeito de **git remote -v**?
+
+Mostra o endereço do repositório remoto
+
+origin  https://github.com/jquery/jquery.git (fetch)
+origin  https://github.com/jquery/jquery.git (push)
+
 26. Um repositório Git pode ser etiquetado ao longo do tempo. Ou seja, _commits_ específicos podem ser “marcados” ou “etiquetados” para facilitar referências posteriores. Para listar todas as “etiquetas” (_tags_) estabelecidas para um dado repositório, qual comando deve ser executado?
 
 git tag
 
 27. Caso um dato repositório retorne muitas “marcas” ou “etiquetas” para o comando **git tag**, como retornar apenas aquelas que atendem a determinado padrão, por exemplo, iniciadas por 2.0?
+
+git tag -l "2.0*"
+
 28. Qual o efeito do comando **git tag -a 3.4-gold -m “minha versão ouro”**?
+
+Cria uma annotated tag ‘3.4-gold’ com a mensagem de tagging “minha versão ouro”
+
 29. Após executado o comando acima, qual o efeito de **git show 3.4-gold**?
+
+É possível ver os dados da tag
+
 30. O que o comando **git push origin 3.4-gold** teria como efeito?
+
+Iria atualizar o repositório remoto com o repositório local sob a tag 3.4-gold.
+
 31. Após executar um commit, qual o efeito de **git commit --amend**?
+
+O git commit --amend permite adicionar alterações ao último commit, por exemplo, na situação em que você esqueceu de adicionar alguma coisa ao último commit, seja um arquivo ou uma certa alteração aos arquivos.
+
 32. Após executar **git add x.txt**, qual o efeito de **git reset HEAD x.txt**?
+
+As mudanças no arquivo não serão comitadas.
+
 33. Após alterar o conteúdo de um arquivo committed em passo anterior, qual o efeito do comando **git checkout -- a.txt**?
+
+Nenhum efeito porque o arquivo já foi comitado.
+
 34. Qual a diferença entre os comandos **git reset HEAD a.txt** e **git checkout -- a.txt**?
+
+O primeiro irá resetar a HEAD para o estado identificado para o arquivo a.txt, enquanto o segundo irá restaurar o arquivo a.txt da working tree.
+
 35. Veja como interpretar o resultado de git diff [aqui](https://medium.com/therobinkim/how-to-read-a-git-diff-6c87a9dc47c5). Execute, em um dos seus projetos, o comando **git diff HEAD~1 HEAD** e certifique-se de que entende o resultado apresentado.
